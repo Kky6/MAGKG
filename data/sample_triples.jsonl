@@ -1,0 +1,3 @@
+{"head":"Aurora deposit","relation":"hosted_in","tail":"Archean basalt","head_type":"Deposit","tail_type":"RockUnit","evidence":"The Aurora deposit is hosted in Archean basalt","chunk_id":"chunk-001"}
+{"head":"Aurora deposit","relation":"controlled_by","tail":"North Fault","head_type":"Deposit","tail_type":"Structure","evidence":"controlled by the North Fault","chunk_id":"chunk-001"}
+{"head":"Borealis deposit","relation":"located_in","tail":"Kora Belt","head_type":"Deposit","tail_type":"MiningArea","evidence":"Borealis deposit occurs in the Kora Belt","chunk_id":"chunk-003"}

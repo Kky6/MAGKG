@@ -1,0 +1,3 @@
+{"id":"pool-001","text":"The North Fault controls mineralization at Aurora.","spans":[{"text":"North Fault","start":4,"end":15},{"text":"Aurora","start":43,"end":49}],"confidence":0.94}
+{"id":"pool-002","text":"The Kora Belt contains several deposits with similar host rocks.","spans":[{"text":"Kora Belt","start":4,"end":13}],"confidence":0.78}
+{"id":"pool-003","text":"Porphyry-style mineralization is discussed as a regional comparison.","spans":[],"confidence":0.42}

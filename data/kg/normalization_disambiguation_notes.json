@@ -1,0 +1,50 @@
+[
+  {
+    "deposit_id": "Phoenix_190656",
+    "note": "Merged 'Phoenix', 'Phoenix Mine', 'Phoenix deposit', and 'Phikwe deposit' into canonical 'Phoenix deposit'. 'Phikwe deposit' is treated as an alias for the Phoenix deposit in the Selebi-Phikwe mining district."
+  },
+  {
+    "deposit_id": "Phoenix_190656",
+    "note": "Both entities are distinct geological structures and should not be merged despite both being classified as Structure type. The Tati greenstone belt is a specific greenstone belt, while the Francistown Arc Complex is a distinct arc complex."
+  },
+  {
+    "deposit_id": "Phoenix_190656",
+    "note": "All three stratigraphic units are distinct and do not require merging."
+  },
+  {
+    "deposit_id": "Phoenix_190656",
+    "note": "Merged singular/plural variants of rock types (tholeiitic basalts → tholeiitic basalt, granites → granite)"
+  },
+  {
+    "deposit_id": "Phoenix_190656",
+    "note": "Normalized 'meta-gabbronoritic intrusions' to 'metagabbronoritic intrusions' (removed hyphen for consistency)"
+  },
+  {
+    "deposit_id": "Phoenix_190656",
+    "note": "Kept metagabbronorite separate from gabbronorite (different metamorphic grade)"
+  },
+  {
+    "deposit_id": "Abu_Swayel_22091",
+    "note": "Merged 'Abu Swayel area' and 'Swayel mine area' as they refer to the same geographic region around the Abu Swayel deposit."
+  },
+  {
+    "deposit_id": "Abu_Swayel_22091",
+    "note": "Merged all Abu Swayel variants (Abu Swayel, Abu Swayel deposit, Abu Swayel mine, Abu Swayel Cu-Ni deposit, Abu Swayel copper prospect, Swayel deposit) into canonical 'Abu Swayel deposit'."
+  },
+  {
+    "deposit_id": "Abu_Swayel_22091",
+    "note": "Gabbro Akarem and Genina Gharbia are distinct deposits and were not merged."
+  },
+  {
+    "deposit_id": "Abu_Swayel_22091",
+    "note": "Source information (document_id, paragraph_id) was not provided in the input entities; therefore, sources are listed as empty arrays."
+  },
+  {
+    "deposit_id": "Abu_Swayel_22091",
+    "note": "Merged 'tonalite' and 'tonalites' to canonical 'tonalite'."
+  },
+  {
+    "deposit_id": "Abu_Swayel_22091",
+    "note": "Merged 'metagabbro' and 'metagabbros' to canonical 'metagabbro'."
+  }
+]

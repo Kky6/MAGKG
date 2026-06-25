@@ -1,0 +1,2 @@
+# The demo workflow uses only the Python standard library.
+# Optional packages can be installed by downstream users for model training/inference.

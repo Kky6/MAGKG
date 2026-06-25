@@ -1,0 +1,488 @@
+{
+  "schema_name": "MAGKG_schema",
+  "entity_schema": {
+    "MineralizationObject": [
+      {
+        "type": "MiningArea",
+        "definition": "Ore-related regional unit, such as a metallogenic belt, ore district, ore field, or mining district.",
+        "level3_extensions": [
+          "MetallogenicBelt",
+          "OreDistrict",
+          "OreField",
+          "MiningDistrict"
+        ]
+      },
+      {
+        "type": "Deposit",
+        "definition": "Concrete mineral deposit or named deposit instance.",
+        "level3_extensions": []
+      },
+      {
+        "type": "OreBody",
+        "definition": "Orebody, vein, lode, stockwork, breccia body, massive ore, or other mineralized body within a deposit.",
+        "level3_extensions": [
+          "Vein",
+          "Stratiform",
+          "Breccia",
+          "Stockwork",
+          "Massive"
+        ]
+      }
+    ],
+    "GeologicalObject": [
+      {
+        "type": "RockUnit",
+        "definition": "Lithologic unit, rock body, or rock assemblage. Includes igneous, sedimentary, and metamorphic rocks, as well as intrusions and lithological associations.",
+        "level3_extensions": [
+          "IntrusiveRock",
+          "VolcanicRock",
+          "SedimentaryRock",
+          "MetamorphicRock"
+        ]
+      },
+      {
+        "type": "Structure",
+        "definition": "Geological structure or structural feature: faults, fractures, folds, shear zones, contacts, unconformities, lineaments, and structural corridors.",
+        "level3_extensions": [
+          "FaultFracture",
+          "Fold",
+          "ShearZone",
+          "Contact"
+        ]
+      },
+      {
+        "type": "Tectonism",
+        "definition": "Tectonic processes and events: orogeny, collision, subduction, rifting, extension, compression, accretion, cratonization. NOT geological features like basins, zones, belts.",
+        "level3_extensions": [
+          "Orogeny",
+          "Collision",
+          "Subduction",
+          "Rifting",
+          "Extension",
+          "Compression",
+          "Accretion"
+        ]
+      },
+      {
+        "type": "StratigraphicUnit",
+        "definition": "Formal or informal stratigraphic unit.",
+        "level3_extensions": [
+          "Group",
+          "Formation",
+          "Member",
+          "Bed"
+        ]
+      }
+    ],
+    "Time": [
+      {
+        "type": "GeologicalTime",
+        "definition": "Formal geological time unit, qualitative geological age expression, or metallogenic/mineralization age expression.",
+        "level3_extensions": [
+          "Era",
+          "Period",
+          "Epoch",
+          "Stage",
+          "MetallogenicAge"
+        ]
+      }
+    ],
+    "Evidence": [
+      {
+        "type": "Sample",
+        "definition": "Rock, ore, mineral, drill-core, fluid-inclusion, or other geological sample.",
+        "level3_extensions": [
+          "RockSample",
+          "OreSample",
+          "DrillCore",
+          "MineralSeparate",
+          "FluidInclusion"
+        ]
+      },
+      {
+        "type": "Method",
+        "definition": "Analytical, dating, geochemical, geophysical, petrographic, remote-sensing, or modeling method.",
+        "level3_extensions": [
+          "GeochemicalAnalysis",
+          "GeochronologicalDating",
+          "GeophysicalSurvey",
+          "RemoteSensingAnalysis",
+          "PetrographicObservation"
+        ]
+      },
+      {
+        "type": "Instrument",
+        "definition": "Instrument, analytical platform, or measurement system.",
+        "level3_extensions": []
+      }
+    ],
+    "Value": [
+      {
+        "type": "Value",
+        "definition": "Measured or reported value, including age, grade, concentration, isotope ratio, temperature, pressure, salinity, size, depth, or geophysical response value.",
+        "level3_extensions": [
+          "AgeValue",
+          "GradeValue",
+          "ConcentrationValue",
+          "IsotopicRatioValue",
+          "TemperatureValue",
+          "PressureValue",
+          "SalinityValue"
+        ]
+      }
+    ]
+  },
+  "relation_schema": [
+    {
+      "relation": "has_value",
+      "category": "MEASUREMENT_ATTRIBUTE",
+      "direction": "head entity has measured or reported value tail",
+      "head_types": [
+        "MiningArea",
+        "Deposit",
+        "OreBody",
+        "RockUnit",
+        "Structure",
+        "StratigraphicUnit",
+        "GeologicalTime",
+        "Sample",
+        "Tectonism"
+      ],
+      "tail_types": [
+        "Value"
+      ],
+      "rule": "Use only when the text provides an explicit measured or reported value. The exact value span should be retained outside the schema as evidence metadata."
+    },
+    {
+      "relation": "located_in",
+      "category": "SPATIAL_CONTEXT",
+      "direction": "head is spatially located in tail",
+      "head_types": [
+        "MiningArea",
+        "Deposit",
+        "OreBody",
+        "RockUnit",
+        "Structure",
+        "StratigraphicUnit",
+        "Sample"
+      ],
+      "tail_types": [
+        "MiningArea",
+        "Tectonism"
+      ],
+      "rule": "Use for geographic, regional, or tectonic location. Deposit/OreBody located_in GeoRegion (greenstone belt, craton, orogenic belt) or MiningArea."
+    },
+    {
+      "relation": "hosted_in",
+      "category": "GEOLOGICAL_CONTEXT",
+      "direction": "head is geologically hosted by tail",
+      "head_types": [
+        "Deposit",
+        "OreBody"
+      ],
+      "tail_types": [
+        "RockUnit",
+        "StratigraphicUnit",
+        "Structure"
+      ],
+      "rule": "Use for host rocks, host strata, host structures, and host geological regions (greenstone belts). Distinguish from located_in."
+    },
+    {
+      "relation": "part_of",
+      "category": "STRUCTURAL_CONTEXT",
+      "direction": "head is a component, member, or subunit of tail",
+      "head_types": [
+        "OreBody",
+        "Deposit",
+        "MiningArea",
+        "RockUnit",
+        "Structure",
+        "StratigraphicUnit",
+        "Tectonism"
+      ],
+      "tail_types": [
+        "Deposit",
+        "MiningArea",
+        "RockUnit",
+        "Structure",
+        "StratigraphicUnit",
+        "Tectonism"
+      ],
+      "rule": "Use for explicit part-whole, stratigraphic, structural, or regional hierarchy. Do not use for simple spatial co-occurrence."
+    },
+    {
+      "relation": "has_time",
+      "category": "TEMPORAL_CONTEXT",
+      "direction": "head has geological or metallogenic time tail",
+      "head_types": [
+        "MiningArea",
+        "Deposit",
+        "OreBody",
+        "RockUnit",
+        "Structure",
+        "StratigraphicUnit",
+        "Tectonism"
+      ],
+      "tail_types": [
+        "GeologicalTime"
+      ],
+      "rule": "Use for geological ages, metallogenic periods, mineralization ages, magmatic ages, and alteration ages."
+    },
+    {
+      "relation": "sampled_from",
+      "category": "ANALYTICAL_EVIDENCE",
+      "direction": "head sample was sampled or collected from tail source",
+      "head_types": [
+        "Sample"
+      ],
+      "tail_types": [
+        "Deposit",
+        "OreBody",
+        "MiningArea",
+        "RockUnit",
+        "StratigraphicUnit",
+        "Structure"
+      ],
+      "rule": "Direction is fixed as Sample to source."
+    },
+    {
+      "relation": "analyzed_by",
+      "category": "ANALYTICAL_EVIDENCE",
+      "direction": "head evidence object or measurement was analyzed by tail method or instrument",
+      "head_types": [
+        "Sample",
+        "RockUnit",
+        "Value"
+      ],
+      "tail_types": [
+        "Method",
+        "Instrument"
+      ],
+      "rule": "Use for explicit analyzed by, measured by, dated by, determined using, or instrument/method evidence."
+    },
+    {
+      "relation": "controlled_by",
+      "category": "GENETIC_MECHANISM",
+      "direction": "head mineralization object is controlled by tail factor",
+      "head_types": [
+        "Deposit",
+        "OreBody",
+        "MiningArea"
+      ],
+      "tail_types": [
+        "Structure",
+        "RockUnit",
+        "StratigraphicUnit",
+        "Tectonism"
+      ],
+      "rule": "Use only with explicit control evidence, such as controlled by, structurally controlled, lithologically controlled, or stratigraphically controlled."
+    },
+    {
+      "relation": "derived_from",
+      "category": "GENETIC_MECHANISM",
+      "direction": "head is derived from tail source",
+      "head_types": [
+        "Deposit",
+        "OreBody"
+      ],
+      "tail_types": [
+        "RockUnit",
+        "Structure",
+        "StratigraphicUnit"
+      ],
+      "rule": "Use only with explicit source evidence, such as derived from, sourced from, originated from, or source reservoir."
+    },
+    {
+      "relation": "caused_by",
+      "category": "GENETIC_MECHANISM",
+      "direction": "head effect is caused by tail cause",
+      "head_types": [
+        "Deposit",
+        "OreBody"
+      ],
+      "tail_types": [
+        "RockUnit",
+        "Structure",
+        "StratigraphicUnit"
+      ],
+      "rule": "Use only with explicit causal evidence such as caused by, resulted from, led to, induced by, or triggered by."
+    },
+    {
+      "relation": "genetically_related_to",
+      "category": "GENETIC_MECHANISM",
+      "direction": "symmetric genetic association without causal direction",
+      "head_types": [
+        "Deposit",
+        "OreBody",
+        "RockUnit",
+        "Structure",
+        "Tectonism"
+      ],
+      "tail_types": [
+        "Deposit",
+        "OreBody",
+        "RockUnit",
+        "Structure",
+        "Tectonism"
+      ],
+      "rule": "Use only for explicit genetic relation, genetic association, co-genetic, or genetically linked statements."
+    }
+  ],
+  "type_relation_coverage": {
+    "MiningArea": {
+      "as_head": [
+        "has_value",
+        "located_in",
+        "part_of",
+        "has_time",
+        "controlled_by"
+      ],
+      "as_tail": [
+        "located_in",
+        "part_of",
+        "sampled_from"
+      ]
+    },
+    "Deposit": {
+      "as_head": [
+        "has_value",
+        "located_in",
+        "hosted_in",
+        "part_of",
+        "has_time",
+        "derived_from",
+        "controlled_by",
+        "caused_by",
+        "genetically_related_to"
+      ],
+      "as_tail": [
+        "part_of",
+        "sampled_from",
+        "genetically_related_to"
+      ]
+    },
+    "OreBody": {
+      "as_head": [
+        "has_value",
+        "located_in",
+        "hosted_in",
+        "part_of",
+        "has_time",
+        "derived_from",
+        "controlled_by",
+        "caused_by",
+        "genetically_related_to"
+      ],
+      "as_tail": [
+        "hosted_in",
+        "part_of",
+        "sampled_from",
+        "genetically_related_to"
+      ]
+    },
+    "RockUnit": {
+      "as_head": [
+        "has_value",
+        "located_in",
+        "part_of",
+        "has_time",
+        "analyzed_by",
+        "genetically_related_to"
+      ],
+      "as_tail": [
+        "hosted_in",
+        "part_of",
+        "sampled_from",
+        "derived_from",
+        "controlled_by",
+        "caused_by",
+        "genetically_related_to"
+      ]
+    },
+    "Structure": {
+      "as_head": [
+        "has_value",
+        "located_in",
+        "part_of",
+        "has_time",
+        "genetically_related_to"
+      ],
+      "as_tail": [
+        "hosted_in",
+        "part_of",
+        "sampled_from",
+        "derived_from",
+        "controlled_by",
+        "caused_by",
+        "genetically_related_to"
+      ]
+    },
+    "StratigraphicUnit": {
+      "as_head": [
+        "has_value",
+        "located_in",
+        "part_of",
+        "has_time"
+      ],
+      "as_tail": [
+        "hosted_in",
+        "part_of",
+        "sampled_from",
+        "controlled_by",
+        "derived_from",
+        "caused_by"
+      ]
+    },
+    "GeologicalTime": {
+      "as_head": [
+        "has_value"
+      ],
+      "as_tail": [
+        "has_time"
+      ]
+    },
+    "Sample": {
+      "as_head": [
+        "has_value",
+        "located_in",
+        "sampled_from",
+        "analyzed_by"
+      ],
+      "as_tail": []
+    },
+    "Method": {
+      "as_head": [],
+      "as_tail": [
+        "analyzed_by"
+      ]
+    },
+    "Instrument": {
+      "as_head": [],
+      "as_tail": [
+        "analyzed_by"
+      ]
+    },
+    "Value": {
+      "as_head": [
+        "analyzed_by"
+      ],
+      "as_tail": [
+        "has_value"
+      ]
+    },
+    "Tectonism": {
+      "as_head": [
+        "has_value",
+        "has_time",
+        "part_of",
+        "genetically_related_to"
+      ],
+      "as_tail": [
+        "located_in",
+        "part_of",
+        "controlled_by",
+        "genetically_related_to"
+      ]
+    }
+  }
+}

@@ -9,19 +9,127 @@ MAGKG targets knowledge-intensive metallogenic literature, where entity boundari
 
 ## Framework
 
-![MAGKG workflow](docs/figures/workflow.png)
+![Figure 01 - MAGKG workflow](figure/preview/fig01_workflow.png)
+
+[Figure 01 - PDF](figure/fig01_workflow.pdf)
+
+### Figure 02 - Flat and hierarchical entity typing
+
+![Figure 02 - Flat and hierarchical entity typing](figure/preview/fig02_Flat_hierarchical.png)
+
+[Download PDF](figure/fig02_Flat_hierarchical.pdf)
 
 ### Boundary-Oriented Extraction
 
-![TSC-NER module](docs/figures/tsc_ner.png)
+![Figure 03 - TSC-NER module](figure/preview/fig03_TSC-NER.png)
+
+[Figure 03 - PDF](figure/fig03_TSC-NER.pdf)
 
 ### Curriculum Self-Training
 
-![Curriculum self-training](docs/figures/curriculum_self_training.png)
+![Figure 04 - Curriculum self-training](figure/preview/fig04_curriculum_self_training.png)
+
+[Figure 04 - PDF](figure/fig04_curriculum_self_training.pdf)
 
 ### Hierarchical Type Assignment
 
-![Hierarchical type assignment](docs/figures/hierarchical_typing.png)
+![Figure 05 - Hierarchical type assignment](figure/preview/fig05_hierarchical_typing.png)
+
+[Figure 05 - PDF](figure/fig05_hierarchical_typing.pdf)
+
+## Additional Paper Figures
+
+The figures below complement the framework figures above. PNG previews are displayed inline, and each figure links to the original PDF.
+
+### Figure 06 - Corpus metadata
+
+![Figure 06 - Corpus metadata](figure/preview/fig06_corpus_metadata.png)
+
+[Download PDF](figure/fig06_corpus_metadata.pdf)
+
+### Figure 07 - Corpus parsing and metadata representation
+
+![Figure 07 - Corpus parsing and metadata representation](figure/preview/fig07_metadata.png)
+
+[Download PDF](figure/fig07_metadata.pdf)
+
+### Figure 08 - Training iteration metrics
+
+![Figure 08 - Training iteration metrics](figure/preview/fig08_curriculum_metrics.png)
+
+[Download PDF](figure/fig08_curriculum_metrics.pdf)
+
+### Figure 09 - Knowledge graph composition
+
+![Figure 09 - Knowledge graph composition](figure/preview/fig09_MAGKG.png)
+
+[Download PDF](figure/fig09_MAGKG.pdf)
+
+### Figure 10 - Entity word cloud
+
+![Figure 10 - Entity word cloud](figure/preview/fig10_entity_wordcloud.png)
+
+[Download PDF](figure/fig10_entity_wordcloud.pdf)
+
+### Figure 11 - Thanewasna case
+
+![Figure 11 - Thanewasna case](figure/preview/fig11_magkg_case1.png)
+
+[Download PDF](figure/fig11_magkg_case1.pdf)
+
+### Figure 12 - Monakoff and Olympic Dam comparison
+
+![Figure 12 - Monakoff and Olympic Dam comparison](figure/preview/fig12_magkg_case2.png)
+
+[Download PDF](figure/fig12_magkg_case2.pdf)
+
+### Figure 13 - Olympic Dam case views
+
+![Figure 13 - Olympic Dam case views](figure/preview/fig13_magkg_case3.png)
+
+[Download PDF](figure/fig13_magkg_case3.pdf)
+
+### Figure 14 - Cross-record integration
+
+![Figure 14 - Cross-record integration](figure/preview/fig14_magkg_case4.png)
+
+[Download PDF](figure/fig14_magkg_case4.pdf)
+
+### Figure 15 - Neo4j graph visualization
+
+![Figure 15 - Neo4j graph visualization](figure/preview/fig15_magkg_neo4j.png)
+
+[Download PDF](figure/fig15_magkg_neo4j.pdf)
+
+### Figure 16 - IOCG literature retrieval
+
+![Figure 16 - IOCG literature retrieval](figure/preview/fig16_IOCG_retrieval.png)
+
+[Download PDF](figure/fig16_IOCG_retrieval.pdf)
+
+### Figure 17 - Geological relations
+
+![Figure 17 - Geological relations](figure/preview/fig17_geological_relations.png)
+
+[Download PDF](figure/fig17_geological_relations.pdf)
+
+### Figure 18 - Ernest Henry case
+
+![Figure 18 - Ernest Henry case](figure/preview/fig18_Ernest_Henry.png)
+
+[Download PDF](figure/fig18_Ernest_Henry.pdf)
+
+### Figure 19 - Geophysical context
+
+![Figure 19 - Geophysical context](figure/preview/fig19_geophysical_context.png)
+
+[Download PDF](figure/fig19_geophysical_context.pdf)
+
+### Figure 20 - Geological profiles
+
+![Figure 20 - Geological profiles](figure/preview/fig20_geological_profiles.png)
+
+[Download PDF](figure/fig20_geological_profiles.pdf)
 
 ## Installation
 
